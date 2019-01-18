@@ -31,5 +31,30 @@ namespace Banking.Tests
                           //(expected, actual)
             Assert.Equal(200M, account.Balance);
         }
+
+        [Fact]
+        public void Withdraw_Decreases_Balance()
+        {
+            CheckingAccount account = new CheckingAccount();
+
+            account.Deposit(250M);
+
+            account.Withdraw(100M);
+
+            Assert.Equal(150M, account.Balance);
+        }
+
+        //[Fact]
+        //// Creating variables
+        //public void Foo()
+        //{
+        //    int age; // Declare
+        //    age = 35; // Assign
+        //    int graduationYear = 2002; // Initialize
+
+        //    Console.WriteLine(age);
+        //    Console.WriteLine(graduationYear);
+        //}
     }
+        
 }
